@@ -47,7 +47,7 @@ gem 'mailgun_rails'
 gem 'tsv'
 gem 'rubyzip'
 gem 'httparty'
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'devise', github: 'heartcombo/devise', branch: 'main'
 gem "recaptcha"
 gem "docsplit"
 gem "font-awesome-rails"

@@ -12,11 +12,11 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  host: db
+  host: some-mariadb
   collation: utf8mb4_unicode_ci
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: monty
+  password: some_pass
   socket: /tmp/mysql.sock
 
 development:

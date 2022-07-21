@@ -10,14 +10,17 @@ RUN apt-get update && \
 RUN mkdir -p /app
 WORKDIR /app
 COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-RUN gem install bundler
+# COPY Gemfile.lock /app/Gemfile.lock
+RUN gem install bundler -v 1.3.0
 RUN bundle install
+RUN gem install nokogiri -v 1.12.5
+RUN gem install rails -v 5.1.0
 COPY . /app
 
 RUN rm config/credentials.yml.enc
 COPY config/master.key.sample config/master.key
 COPY config/credentials.yml.enc.sample config/credentials.yml.enc
+
 COPY config/database.yml.docker config/database.yml
 
 COPY docker-entrypoint.sh /usr/local/bin/entrypoint.sh
